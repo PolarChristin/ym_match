@@ -1,6 +1,7 @@
 from yandex_music import Client
 import time
 import sqlite3
+# в config опередяются токен и ID пользователей
 import config
 
 
@@ -57,8 +58,9 @@ class User:
 client = Client(config.ACCESS_TOKEN)
 client.init()
 
-first_user = User('polar.christin')
-second_user = User('lovehate16605')
+
+first_user = User(config.FIRST_USER)
+second_user = User(config.SECOND_USER)
 
 first_user.get_tracklist()
 second_user.get_tracklist()
